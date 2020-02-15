@@ -9,8 +9,8 @@ function ArrayOfProducts(props) {
 
     return (
         <>
-            {props.products.map(item => (
-                <div className="products-container__item">
+            {props.products.map((item, index) => (
+                <div className="products-container__item" key={index}>
                     <img
                         src={
                             item.category === 'Snowboard' ? imgBoard :

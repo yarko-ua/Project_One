@@ -8,16 +8,26 @@ class Header extends React.Component {
             <header>
                 <div className="wrapper">
                     <div className="header-top">
-                        <img src="./img/Logo2.jpg" alt="logo" />
+                        <div className="logo">
+                            <img src="./img/Logo3.jpg" alt="logo" className="logo__img" />
+                            <h1>Snowy Store</h1>
+                        </div>
                         <div className="search-bar">
                             <input type="text" id="search" />
-                            <i class="fas fa-search"></i>
+                            <i className="fas fa-search"></i>
                         </div>
-                        <i class="fas fa-shopping-cart"></i>
+                        <div className="shopping-cart">
+                            <i className="fas fa-shopping-cart"></i>
+                            <i className="fas fa-shopping-cart"></i>
+                        </div>
                     </div>
                     <hr />
                     <div className="header-bottom">
                         <Navbar links={this.props.categories} />
+                        <span className="currency">
+                            <i class="fas fa-hryvnia"></i>
+                            <i class="fas fa-dollar-sign"></i>
+                        </span>
                     </div>
                 </div>
             </header>
