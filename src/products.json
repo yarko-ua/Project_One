@@ -1,0 +1,230 @@
+{
+    "name": "products",
+    "goods": [
+        {
+            "category": "Snowboard",
+            "name": "Burton ",
+            "model": "Arrowhead",
+            "sex": "Men's",
+            "price": "450",
+            "size": [
+                "150",
+                "153",
+                "160"
+            ]
+        },
+        {
+            "category": "Snowboard",
+            "name": "Burton",
+            "model": "Moon",
+            "sex": "Men's",
+            "price": "779.99",
+            "size": [
+                "160",
+                "163",
+                "158"
+            ]
+        },
+        {
+            "category": "Snowboard",
+            "name": "Burton",
+            "model": "Diva",
+            "sex": "Women's",
+            "price": "380",
+            "size": [
+                "145",
+                "147",
+                "151"
+            ]
+        },
+        {
+            "category": "Snowboard",
+            "name": "LibTech",
+            "model": "T.Rice Pro",
+            "sex": "Men's",
+            "price": "850",
+            "size": [
+                "155",
+                "153",
+                "160"
+            ]
+        },
+        {
+            "category": "Snowboard",
+            "name": "Capita",
+            "model": "Blazer",
+            "sex": "Men's",
+            "price": "537.99",
+            "size": [
+                "145",
+                "157",
+                "152"
+            ]
+        },
+        {
+            "category": "Snowboard Binding",
+            "name": "Union",
+            "model": "Strata",
+            "sex": "Men's",
+            "price": "237.96",
+            "size": [
+                "S",
+                "M",
+                "L"
+            ]
+        },
+        {
+            "category": "Snowboard Binding",
+            "name": "Union",
+            "model": "Force",
+            "sex": "Men's",
+            "price": "212.46",
+            "size": [
+                "S",
+                "M",
+                "XL"
+            ]
+        },
+        {
+            "category": "Snowboard Binding",
+            "name": "Burton",
+            "model": "Cartel Re:Flex",
+            "sex": "Women's",
+            "price": "279.95",
+            "size": [
+                "S",
+                "M"
+            ]
+        },
+        {
+            "category": "Snowboard Binding",
+            "name": "Union",
+            "model": "Atlas",
+            "sex": "Men's",
+            "price": "263.96",
+            "size": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        {
+            "category": "Snowboard Binding",
+            "name": "Gnu",
+            "model": "Psych",
+            "sex": "Men's",
+            "price": "259.99",
+            "size": [
+                "XS",
+                "S",
+                "M",
+                "L"
+            ]
+        },
+        {
+            "category": "Snowboard Binding",
+            "name": "Gnu",
+            "model": "Gnunior",
+            "sex": "Men's",
+            "price": "124.99",
+            "size": [
+                "S",
+                "XS"
+            ]
+        },
+        {
+            "category": "Snowboard Boot",
+            "name": "ThirtyTwo",
+            "model": "Lashed",
+            "sex": "Men's",
+            "price": "240",
+            "size": [
+                "7.5",
+                "8.0",
+                "8.5",
+                "9.0",
+                "9.5"
+            ]
+        },
+        {
+            "category": "Snowboard Boot",
+            "name": "Burton",
+            "model": "Photon",
+            "sex": "Women's",
+            "price": "379.95",
+            "size": [
+                "9.0",
+                "9.5",
+                "10.0",
+                "11.0",
+                "12.5"
+            ]
+        },
+        {
+            "category": "Snowboard Boot",
+            "name": "Burton",
+            "model": "Imperial",
+            "sex": "Men's",
+            "price": "339.95",
+            "size": [
+                "7.5",
+                "8.0",
+                "8.5",
+                "9.0",
+                "9.5",
+                "10.0",
+                "10.5"
+            ]
+        },
+        {
+            "category": "Snowboard Boot",
+            "name": "Ride",
+            "model": "Lasso Boa",
+            "sex": "Men's",
+            "price": "299.95",
+            "size": [
+                "8.0",
+                "9.5"
+            ]
+        },
+        {
+            "category": "Snowboard Boot",
+            "name": "K2",
+            "model": "Aspect Boa",
+            "sex": "Men's",
+            "price": "459.95",
+            "size": [
+                "7.5",
+                "9.0",
+                "9.5"
+            ]
+        },
+        {
+            "category": "Snowboard Boot",
+            "name": "Ride",
+            "model": "Trident",
+            "sex": "Men's",
+            "price": "469.95",
+            "size": [
+                "8.5",
+                "9.0",
+                "9.5",
+                "10.5",
+                "12.0"
+            ]
+        },
+        {
+            "category": "Snowboard Binding",
+            "name": "Union",
+            "model": "Strata",
+            "sex": "Men's",
+            "price": "237.96",
+            "size": [
+                "S",
+                "M",
+                "L"
+            ]
+        }
+    ]
+}
