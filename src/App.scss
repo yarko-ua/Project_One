@@ -44,7 +44,7 @@ header {
         width: 100%;
         max-width: 600px;
         min-width: 110px;
-        margin: 0 10px;
+        margin: 0 20px;
         height: 30px;
         i.fa-search{
             position: absolute;
@@ -126,8 +126,10 @@ header {
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
-        font-size: 22px;
-        font-weight: lighter;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        
     }
 }
 
@@ -159,6 +161,9 @@ section {
     height: 100vh;
     position: sticky;
     top: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
     
 }
 .products-container {
@@ -214,10 +219,24 @@ section {
     display: flex;
     flex-flow: column;
     border: none;
-    margin-left: 20%;
-    margin-top: 40px;
+   margin: 30px 10px 10px;
     width: max-content;
-    span {
+    label {
+        display: none;
+        align-items: center;
+        margin-bottom: 10px;
+        transition: all 0.7s linear;
+    }
+    fieldset {
+        border: none;
+        &.active label {
+            display: flex;
+        }
+    }
+    
+    
+    
+    legend {
         font-size: 24px;
         margin-bottom: 15px;
         border: 2px solid #404040;
@@ -237,20 +256,24 @@ section {
 
         }
     }
-   
-    label {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
+    
     input {
         margin: 0 10px;
         width: 18px;
         height: 18px;
     }
 }
-
-@media screen and (max-width: 750px){
+@media screen and (max-width: 1115px){
+    
+    .header-top .logo h1{
+        font-size: 24px;   
+    }
+    .logo .logo__img {
+        width: 45px;
+        height:45px; 
+    }
+}
+@media screen and (max-width: 1000px){
    
     section{
      .wrapper {
@@ -260,6 +283,10 @@ section {
              width: 100%;
              display: flex;
              flex-flow: row wrap;
+             align-items: baseline;
+             justify-content: center;
+             height: max-content;
+             position: static;
          }
          .products-container{
              width: 100%;
@@ -267,14 +294,34 @@ section {
              overflow-y: visible;
          }
      }
-    }
-    // .products-container {
-    //     display: flex;
-    //     justify-content: center;
-    //     flex-flow: row wrap;
-    //     border-right: 2px solid #808080;
-    //     height: 88vh;
-    //     overflow-y: visible;
-    // }
-     
- }
+    }   
+}
+
+// @media screen and (max-width: 750px){
+   
+//     section{
+//      .wrapper {
+//          display: flex;
+//          flex-flow: column nowrap;
+//          .filter-container {
+//              width: 100%;
+//              display: flex;
+//              flex-flow: row wrap;
+//              justify-content: flex-start;
+//          }
+//          .products-container{
+//              width: 100%;
+//              height: max-content;
+//              overflow-y: visible;
+//          }
+//      }
+//     }
+// }
+
+@media screen and (max-width: 500px){
+
+.logo h1 {
+    display: none;
+}
+
+}

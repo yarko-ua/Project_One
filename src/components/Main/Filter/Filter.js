@@ -16,7 +16,6 @@ class Filter extends Component {
     }
 
     render() {
-        // let options = { name: ["Highest", "Lowest"] };
         return (
             <>
                 <Input title="Price" type="radio" name="price"

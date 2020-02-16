@@ -9,23 +9,27 @@ class Input extends Component {
         this.toggleOptions = this.toggleOptions.bind(this);
     };
 
-    toggleOptions() {
+    toggleOptions(e) {
         this.setState({ isOpened: !this.state.isOpened, })
+        if (this.state.isOpened) {
+            e.target.parentNode.classList.add('active')
+        } else {
+            e.target.parentNode.classList.remove('active')
+        }
+        setTimeout(console.log(this.state.isOpened, e.target), 2000);
     };
     render() {
-        // let showOpt = null;
-        // if (this.state.isOpened) {
-        //     showOpt;
-        // }
-        console.log(this.props.options);
         return (
             <>
                 <div className="filters">
-                    <span onClick={this.toggleOptions}>{this.props.title}</span>
-                    {this.props.options.map((option, index) => (
-                        <label key={index}><input name={this.props.name} type={this.props.type} />{option}</label>
-                    ))
-                    }
+                    <form >
+                        <fieldset>
+                            <legend onClick={this.toggleOptions}>{this.props.title}</legend>
+                            {this.props.options.map((option, index) => (
+                                <label key={index}><input name={this.props.name} type={this.props.type} />{option}</label>
+                            ))}
+                        </fieldset>
+                    </form>
                 </div>
             </>
         );
