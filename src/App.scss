@@ -1,9 +1,10 @@
 .wrapper{
-    width: 85%;
+    width: 80%;
     margin: 0 auto;
 }
 header {
     background-color: #000;
+    position: relative;
     hr {
         width: 100%;
     }
@@ -21,7 +22,7 @@ header {
     position: relative;
     .logo {
         display: flex;
-        color: #fff;
+        color: #ddd8c5;
         align-items: center;
         justify-content: flex-start;
         h1{
@@ -58,6 +59,7 @@ header {
         input {
             width: 100%;
             height: 30px;
+            background-color: #ddd8c5;
             border: none;
             border-radius: 15px;
             padding-left: 30px;
@@ -82,13 +84,13 @@ header {
     cursor: pointer;
     i {
         position: absolute;
-        color: #fff;
-        font-size: 26px;
+        color: #ddd8c5;
+        font-size: 24px;
         transition: .4s ease-in-out;
     }
     &:hover i:first-child{
         transform: translateX(27%);
-        color: #33ff00;
+        color: #6fbeff;
     }
     &:hover i:last-child{
         transform: translateX(40%);
@@ -111,7 +113,7 @@ header {
                 padding: 10px 20px;
                 font-family: 'Sriracha', cursive;
                 &:hover {
-                    background-color: #fff;
+                    background-color: #ddd8c5;
                     color: #000;
                 }
             }
@@ -124,52 +126,62 @@ header {
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
-        font-size: 26px;
+        font-size: 22px;
+        font-weight: lighter;
     }
 }
-
 
 section {
     width: 100%;
     min-height: 600px;
-    background-color: #fff;
-    font-family: 'Sriracha', cursive;
+    background: url(./backgr1.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
     .wrapper {
         display: flex;
         flex-flow: row nowrap;
-        width: 85%;
+        width: 80%;
         .filter-container {
-            width: 25%;
+            width: 20%;
         }
         .products-container{
-            width: 75%;
+            width: 80%;
         }
     }
 }
 
 
 .filter-container {
-    background-color: #fff;
-    box-shadow: 
-    -20px 0 10px #909090;
+    background-color: #cae1f3;
+    border-right: 2px solid #fff;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    
 }
 .products-container {
+    background-color: #cae1f3;
+    font-family: 'Sriracha', cursive;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    height: 88vh;
-    overflow-y: auto;
-    box-shadow: 20px 0 15px #909090;
+    height: 100%;
+    // overflow-y: auto;
+    padding-top: 20px;
+    padding: 20px;
     &__item{
+        background-color: #fff;
         width: 30%;
         margin: 1%;
         min-width: 270px;
         min-height: 300px;
-        padding: 10px;
+        padding: 20px 15px;
         flex-grow: 1;
         cursor: pointer;
-        box-shadow: 0 0 8px 2px #909090;
-        border-radius: 5px;
+        box-shadow: 0 0 5px 1px #909090;
+        border-radius: 7px;
         img {
             width: 100%;
             min-width: 250px;
@@ -208,20 +220,21 @@ section {
     span {
         font-size: 24px;
         margin-bottom: 15px;
+        border: 2px solid #404040;
+        height: 50px;
+        width: 150px;
+        padding: 10px;
+        display: inline-block;
+        text-align: center;
         cursor: pointer;
         position: relative;
-        &::before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-top: 8px solid transparent;
-            border-left: 16px solid red;
-            border-bottom: 8px solid transparent;
-            top: 50%;
-            left: 0;
-            transform: translate(-150%, -50%);
-            
+        transition: all .5s linear;
+        &:hover {
+            background-color: #707070;
+            box-shadow: 0 0 1px 5px #464646;
+            border-color: #909090;
+            color: #cae1f3;
+
         }
     }
    
