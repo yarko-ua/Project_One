@@ -14,6 +14,7 @@ class Main extends Component {
                     </div>
                     <div className="products-container">
                         <ArrayOfProducts products={productsBase.goods} />
+
                     </div>
                 </div>
             </section>

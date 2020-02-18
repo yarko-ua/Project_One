@@ -66,6 +66,7 @@ header {
             font-size: 20px;
             position: relative;
             font-family: 'Lobster', cursive;
+            // font-family: 'Sriracha', cursive;
             font-size: 22px;
             
             &:focus + i.fa-search{
@@ -219,49 +220,65 @@ section {
     display: flex;
     flex-flow: column;
     border: none;
-   margin: 30px 10px 10px;
+   margin: 10px 10px 0px;
     width: max-content;
-    label {
-        display: none;
-        align-items: center;
-        margin-bottom: 10px;
-        transition: all 0.7s linear;
+    &:nth-child(1){
+        margin-top: 20px;
     }
     fieldset {
-        border: none;
-        &.active label {
-            display: flex;
+        max-height: 55px;
+        overflow-y: hidden;
+        transition: all .3s linear;
+        border: 2px solid #404040;
+        &.active  {
+            max-height: fit-content;
         }
     }
     
-    
-    
     legend {
+        border-bottom: 2px solid #404040;
         font-size: 24px;
-        margin-bottom: 15px;
-        border: 2px solid #404040;
         height: 50px;
         width: 150px;
-        padding: 10px;
+        padding: 12px 10px 0px;
         display: inline-block;
         text-align: center;
         cursor: pointer;
         position: relative;
         transition: all .5s linear;
         &:hover {
-            background-color: #707070;
-            box-shadow: 0 0 1px 5px #464646;
-            border-color: #909090;
-            color: #cae1f3;
-
+            box-shadow: inset 0px 50px   #ffffff;
         }
     }
-    
-    input {
-        margin: 0 10px;
-        width: 18px;
-        height: 18px;
+    label {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        padding: 10px;
+        background-color: #fff;
+        border-bottom: 1px solid #707070;
+        &:hover {
+            background-color: #ddd8c5;
+            cursor: pointer;
+        }
     }
+    input {
+        display: block;
+        height: 0;
+        width: 0;
+    }
+     input:checked::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            top: 0;
+            left: 0;
+            background-color: rgba(54, 54, 54, 0.7)
+
+    }
+    
 }
 @media screen and (max-width: 1115px){
     

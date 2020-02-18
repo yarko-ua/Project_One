@@ -17,15 +17,15 @@ function ArrayOfProducts(props) {
                                 item.category === 'Snowboard Binding' ? imgBinding : imgBoot
                         }
                         alt={item.category} />
-                    <h3>
+                    <h3 className='product-brand'>
                         {item.name}
                     </h3>
-                    <p>
+                    <p className='product-name'>
                         {item.model} {item.category}
                         <span className="line"></span>
                         {item.sex}
                     </p>
-                    <span>
+                    <span className='product-price'>
                         {'$' + item.price}
                     </span>
                 </div>
