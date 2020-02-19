@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar(props) {
 
@@ -7,9 +8,9 @@ function Navbar(props) {
             <ul>
                 {props.links.map(item => (
                     <li key={item} className="navbar-item">
-                        <a href={'#' + item}>
+                        <NavLink to={`/${item}`}>
                             {item}
-                        </a>
+                        </NavLink>
                     </li>
                 ))
                 }

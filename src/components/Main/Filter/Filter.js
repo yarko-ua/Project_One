@@ -1,53 +1,46 @@
-import React, { Component } from "react";
+import React from "react";
 import Input from "./Input/Input";
 
 
-class Filter extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: '',
-            // optionsIsOpened: false
-        };
-        this.toggleOptions = this.toggleOptions.bind(this);
-    }
+function Filter(props) {
 
-    toggleOptions(e) {
-        // let state = this.state.optionsIsOpened;
-        // this.setState({ optionsIsOpened: !state, })
-        // state = this.state.optionsIsOpened;
+    let toggleOptions = (e) => {
+        // let state = state.optionsIsOpened;
+        // setState({ optionsIsOpened: !state, })
+        // state = state.optionsIsOpened;
+
         if (e.target.parentNode.className === '') {
             e.target.parentNode.classList.add('active')
         }
         else if (e.target.parentNode.className === 'active') {
             e.target.parentNode.classList.remove('active')
         }
-        // setTimeout(() => console.log(this.state.optionsIsOpened), 100);
+
+        // setTimeout(() => console.log(state.optionsIsOpened), 100);
 
     }
 
-    render() {
-        return (
-            <>
-                <Input title="Price" type="radio" name="price"
-                    options={["Highest", "Lowest"]}
-                    toggle={this.toggleOptions}
-                />
-                <Input title="Gender" type="radio" name="gender"
-                    options={["Male", "Female"]}
-                    toggle={this.toggleOptions}
-                />
-                <Input title="Brand" type="checkbox" name="brand"
-                    options={["Burton", "LibTech", "Ride", "Capita", "Union"]}
-                    toggle={this.toggleOptions}
-                />
-                <Input title="Size" type="checkbox" name="size"
-                    options={["XS", "S", "M", "L", "XL", "152cm", "155cm", "160cm", "7.0", "7.5", "8.0", "8.5", "9.0", "9.5"]}
-                    toggle={this.toggleOptions}
-                />
-            </>
-        )
-    }
+    return (
+        <div className="filter-container">
+            <Input title="Price" type="radio" name="price"
+                options={["Highest", "Lowest"]}
+                toggle={toggleOptions}
+            />
+            <Input title="Gender" type="radio" name="gender"
+                options={["Male", "Female"]}
+                toggle={toggleOptions}
+            />
+            <Input title="Brand" type="checkbox" name="brand"
+                options={props.brands}
+                toggle={toggleOptions}
+            />
+            <Input title="Size" type="checkbox" name="size"
+                options={props.options}
+                toggle={toggleOptions}
+            />
+        </div>
+    );
+
 }
 
 export default Filter
