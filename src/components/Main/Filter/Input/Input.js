@@ -9,7 +9,20 @@ function Input(props) {
                     <fieldset>
                         <legend onClick={props.toggle}>{props.title}</legend>
                         {props.options.map((option, index) => (
-                            <label key={index}><input name={props.name} type={props.type} />{option}</label>
+                            <>
+                                <input
+                                    name={props.name}
+                                    type={props.type}
+                                    id={index + '' + option}
+                                />
+                                <label
+                                    key={option + '_' + index}
+                                    htmlFor={index + '' + option}
+                                    onClick={props.getOption}
+                                >
+                                    {option}
+                                </label>
+                            </>
                         ))}
                     </fieldset>
                 </form>
