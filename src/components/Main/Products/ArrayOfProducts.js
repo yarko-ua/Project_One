@@ -6,7 +6,7 @@ function ArrayOfProducts(props) {
     let imgBinding = 'https://content.backcountry.com/images/items/1200/BUR/BUR02WQ/SEAFOA.jpg'
 
     return (
-        <>
+        <div className="products-container">
             {props.products.map((item, index) => (
                 <div className="products-container__item" key={index}>
                     <div className="rotate">
@@ -34,7 +34,7 @@ function ArrayOfProducts(props) {
                                 {item.description}
                             </p>
                             <div className="product-sizes">
-                                {item.size.map(size => <span className="product-sizes__item">{size}</span>)}
+                                {item.size.map(size => <span key={size} className="product-sizes__item">{size}</span>)}
                             </div>
                             <button className="product-add-to-cart">ADD</button>
                         </div>
@@ -42,7 +42,7 @@ function ArrayOfProducts(props) {
 
                 </div>
             ))}
-        </>
+        </div>
     )
 }
 

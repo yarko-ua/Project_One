@@ -138,25 +138,28 @@ header {
     }
 }
 
-section {
-    width: 100%;
-    height: 100%;
-    min-height: 600px;
+section.home,section.contact {
     background: url(./backgr1.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+
+section.main {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: flex;
     position: relative;
-    .wrapper {
-        display: flex;
-        flex-flow: row nowrap;
-        width: 80%;
         .filter-container {
-            width: 20%;
+            width: 15%;
         }
         .products-container{
-            width: 80%;
+            width: 85%;
         }
-    }
+    
 }
 
 
@@ -170,24 +173,28 @@ section {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    
+    padding: 5px;
 }
 .products-container {
-    background-color: #cae1f3;
+    background: url(https://cdn5.vectorstock.com/i/1000x1000/21/34/graffiti-colorful-background-vector-26222134.jpg) repeat center;
+    // background-size: cover;
+    background-attachment: fixed;
     font-family: 'Sriracha', cursive;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-flow: row wrap;
     height: 100%;
-    // overflow-y: auto;
+    min-height: 100vh;
+    // overflow-y: auto; 
+    padding: 15px;
     padding-top: 20px;
-    padding: 20px;
     &__item{
-        width: 30%;
-        margin: 1%;
-        min-width: 270px;
-        min-height: 400px;
-        flex-grow: 1;
+        width: 20%;
+        // height: 100%;
+        margin: 3% 2%;
+        min-width: 240px;
+        min-height: 250px;
+        // flex-grow: 1;
         perspective: 900px;
     }
     .rotate {
@@ -202,20 +209,17 @@ section {
     }
     .front {
         width: 100%;
-        height: 100%;
+        // height: 100%;
         background-color: #fff;
-        padding: 20px 15px;
+        padding: 10px;
         box-shadow: 0 0 5px 1px #909090;
         border-radius: 7px;
-        position: absolute;
-            top: 0;
-            left: 0;
-            backface-visibility: hidden;
+        backface-visibility: hidden;
         img {
             width: 100%;
-            min-width: 250px;
-            height: 70%;
-            min-height: 250px ;
+            min-width: 200px;
+            height: 65%;
+            min-height: 150px;
         }
         .product-brand {
             font-size: 20px;
@@ -244,17 +248,19 @@ section {
     
     }
     .back {
-        width: 100%;
-            height: 100%;
-            padding: 20px 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            // height: 100%;
+            padding: 10px;
             background-color: #fff;
             display: flex;
             flex-flow: column;
             justify-content: flex-start;
             transform: rotateY(180deg);
-            
             border-radius: 7px;
-            
+            backface-visibility: hidden;
         .product-description {
             font-size: 14px;
         }
@@ -263,7 +269,7 @@ section {
             width: 100%;
             flex-flow: row wrap;
             justify-content: center;
-            margin: 10px 0;
+            margin: 5px 0;
             &__item{
                 display: inline-block;
                 padding: 0px 10px;
@@ -305,7 +311,7 @@ section {
         margin-top: 15px;
     }
     fieldset {
-        max-height: 55px;
+        max-height: 51px;
         overflow-y: hidden;
         transition: all .3s linear;
         border: 2px solid #404040;
@@ -342,11 +348,11 @@ section {
         }
     }
     input {
-        display: block;
-        height: 0;
-        width: 0;
+        display: none;
+        // height: 0;
+        // width: 0;
     }
-     input:checked::after {
+     input:checked + label::after {
             content: '';
             display: block;
             position: absolute;
@@ -369,12 +375,11 @@ section {
         height:45px; 
     }
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1199px){
    
-    section{
-     .wrapper {
-         display: flex;
-         flex-flow: column nowrap;
+    section.main{
+        display: flex;
+        flex-direction: column;
          .filter-container {
              width: 100%;
              display: flex;
@@ -389,7 +394,7 @@ section {
              height: max-content;
              overflow-y: visible;
          }
-     }
+     
     }   
 }
 
@@ -425,11 +430,9 @@ section {
 
 .mainTitle {
     width: 100%;
-    height: 100vh;
     text-align: center;
     font-size: 45px;
 }
 .contactsTitle {
     width: 100%;
-    height: 87vh;
 }
