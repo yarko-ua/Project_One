@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Header categories={['home', 'snowboards', 'bindings', 'boots', 'contacts']} />
-        <Route path='/home' component={Home} />
+        <Route exact path='/' component={Home} />
         <Route path='/snowboards'
           component={(props) => (<Main
             snowboard={{}}
