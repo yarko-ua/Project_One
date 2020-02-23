@@ -9,8 +9,9 @@ class Main extends Component {
         this.state = {
             price: '',
             gender: '',
-            brand: '',
-            size: ''
+            brand: [],
+            size: [],
+            shoppingCart: [],
         }
         this.getFilterOption = this.getFilterOption.bind(this);
         // this.useFilter = this.useFilter.bind(this);
@@ -23,9 +24,22 @@ class Main extends Component {
     getFilterOption(e) {
         let getValue = e.target.innerText;
         let result;
-        if (parseFloat(getValue) > 0) {
-            result = parseFloat(getValue);
-            this.setState({ size: result })
+        if (parseFloat(getValue) > 0 ||
+            (getValue === 'S' || getValue === 'XS' || getValue === 'M' ||
+                getValue === 'L' || getValue === 'XL')) {
+            let value = parseFloat(getValue);
+            result = getValue;
+            if (!isFinite(value)) {
+                result = getValue;
+            } else {
+                result = parseFloat(getValue).toString();
+            }
+            if (this.state.size.length === 0) {
+                this.setState({ size: [result] })
+            } else {
+                let prevState = [...this.state.size];
+                this.setState({ size: [...prevState, result] })
+            }
         } else if (getValue === 'Highest' || getValue === 'Lowest') {
             result = getValue;
             this.setState({ price: result })
@@ -37,38 +51,23 @@ class Main extends Component {
             this.setState({ brand: result })
         };
         console.log(result);
-        // console.log(this.filter.size);
-        // this.setFilterOption(result);
         setTimeout(() => console.log(this.state), 0);
     }
 
-    // setFilterOption(result) {
-    //  let state = { ...this.state.filter };
-    //  if (isFinite(result)) {
-    //  this.setState({ size: result })
-    //   ;}
-
     FilterSize = (category) => {
         let filtered = category;
-        if (this.state.size !== '') {
-            return filtered = filtered.filter(item => {
-                let size = item.size.map(item => parseFloat(item));
-                // console.log(item.size);
-                console.log(size);
-                console.log(size.includes(this.state.size));
-                return size.includes(this.state.size);
-            });
-        } else {
-            return filtered;
+        if (this.state.size.length !== 0) {
+            return filtered.filter(item => item.size.includes(this.state.size[0]));
         }
+        return filtered;
     }
-    // Чому працює якщо ми не забіндили функцію????????????????????????????????????????????????
+    // Чому працює якщо ми не забіндили функцію???????????????????????????????????????????????? бо не використовуэєм this or event??
     FilterPrice = (category) => {
         let filtered = category;
         if (this.state.price === 'Highest') {
-            return filtered = filtered.sort((a, b) => b.price - a.price);
+            return filtered.sort((a, b) => b.price - a.price);
         } else if (this.state.price === 'Lowest') {
-            return filtered = filtered.sort((a, b) => a.price - b.price);
+            return filtered.sort((a, b) => a.price - b.price);
         } else {
             return filtered;
         }
@@ -77,9 +76,9 @@ class Main extends Component {
     FilterGender = (category) => {
         let filtered = category;
         if (this.state.gender === 'Male') {
-            return filtered = filtered.filter(item => item.sex === "Men's");
+            return filtered.filter(item => item.sex === "Men's");
         } else if (this.state.gender === 'Female') {
-            return filtered = filtered.filter(item => item.sex === "Women's");
+            return filtered.filter(item => item.sex === "Women's");
         } else {
             return filtered;
         }
@@ -87,29 +86,29 @@ class Main extends Component {
 
     FilterBrand = (category) => {
         let filtered = category;
-        if (this.state.brand !== '') {
-            return filtered = filtered.filter(item => item.name === this.state.brand)
+        if (this.state.brand.length !== 0) {
+            return filtered.filter(item => item.name === this.state.brand)
         } else {
             return filtered;
         }
     }
 
-    // useFilter(category) {
-    //     let a;
-    //     return a = this.FilterSize(category);
-    //     this.FilterPrice(category);
-    //     this.FilterGender(category);
-    //     this.FilterBrand(category);
-
-    // };
-
-
+    filter = (category) => {
+        let a = category;
+        a = this.FilterPrice(a);
+        // console.log(a);
+        a = this.FilterBrand(a);
+        a = this.FilterSize(a);
+        // console.log(a);
+        a = this.FilterGender(a);
+        // console.log(a);
+        return a;
+    }
 
     render() {
         const snowboards = productsBase.goods.filter(item => item.category === "Snowboard");
         const bindings = productsBase.goods.filter(item => item.category === "Snowboard Binding");
         const boots = productsBase.goods.filter(item => item.category === "Snowboard Boot");
-
 
         if (this.props.snowboard) {
             return (
@@ -119,7 +118,7 @@ class Main extends Component {
 
                     />
                     <ArrayOfProducts
-                        products={this.FilterSize(snowboards)}
+                        products={this.filter(snowboards)}
                     />
                 </section >
             );
@@ -130,7 +129,7 @@ class Main extends Component {
                     <Filter options={this.props.options} brands={this.props.brands}
                         getOption={this.getFilterOption}
                     />
-                    <ArrayOfProducts products={this.FilterSize(bindings)} />
+                    <ArrayOfProducts products={this.filter(bindings)} />
                 </section>
             );
         }
@@ -140,7 +139,7 @@ class Main extends Component {
                     <Filter options={this.props.options} brands={this.props.brands}
                         getOption={this.getFilterOption}
                     />
-                    <ArrayOfProducts products={this.FilterGender(boots)} />
+                    <ArrayOfProducts products={this.filter(boots)} />
                 </section>
             );
         }

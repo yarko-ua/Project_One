@@ -8,7 +8,9 @@ function Navbar(props) {
             <ul>
                 {props.links.map(item => (
                     <li key={item} className="navbar-item">
-                        <NavLink to={`/${item}`}>
+                        <NavLink to={
+                            item === 'home' ? `/` : `/${item}`
+                        }>
                             {item}
                         </NavLink>
                     </li>
