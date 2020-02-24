@@ -41,6 +41,7 @@ class App extends Component {
           />)} />
         <Route exact path='/contacts' component={Contacts} />
         <Route exact path='/cart' component={Cart} />
+        {/* <Route exact path='/cart/order' component={Order} /> */}
       </BrowserRouter>
     );
   }

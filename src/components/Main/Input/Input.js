@@ -14,6 +14,7 @@ function Input(props) {
                         {props.options.map((option, index) => (
                             <>
                                 <input
+                                    key={index}
                                     name={props.name}
                                     type={props.type}
                                     id={index + '' + option}

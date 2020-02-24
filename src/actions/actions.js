@@ -19,3 +19,7 @@ export const AddToCart = content => ({
     type: 'Add_To_Cart',
     payload: content
 })
+export const RemoveFromCart = content => ({
+    type: 'Remove_From_Cart',
+    payload: content
+})

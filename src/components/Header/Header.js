@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar/Navbar';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Header extends React.Component {
 
@@ -19,6 +20,11 @@ class Header extends React.Component {
                         </div>
                         <NavLink to="/cart">
                             <div className="shopping-cart">
+                                {this.props.cart.shoppingCart.length !== 0 &&
+                                    <div className="shopping-cart__count">
+                                        {this.props.cart.shoppingCart.length}
+                                    </div>
+                                }
                                 <i className="fas fa-shopping-cart"></i>
                                 <i className="fas fa-shopping-cart"></i>
                             </div>
@@ -41,4 +47,5 @@ class Header extends React.Component {
 }
 
 
-export default Header
+const mapState = props => ({ ...props })
+export default connect(mapState)(Header);
