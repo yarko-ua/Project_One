@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar/Navbar';
+import { NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
 
@@ -16,10 +17,12 @@ class Header extends React.Component {
                             <input type="text" id="search" />
                             <i className="fas fa-search"></i>
                         </div>
-                        <div className="shopping-cart">
-                            <i className="fas fa-shopping-cart"></i>
-                            <i className="fas fa-shopping-cart"></i>
-                        </div>
+                        <NavLink to="/cart">
+                            <div className="shopping-cart">
+                                <i className="fas fa-shopping-cart"></i>
+                                <i className="fas fa-shopping-cart"></i>
+                            </div>
+                        </NavLink>
                     </div>
                     <hr />
                     <div className="header-bottom">
