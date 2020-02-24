@@ -13,6 +13,14 @@ export default (state = initialState, action) => {
                 ]
             }
         }
+        case 'Remove_From_Cart': {
+            return {
+                ...state,
+                shoppingCart: [
+                    state.shoppingCart.filter(item => item !== action.payload)
+                ]
+            }
+        }
         default:
             return state;
     }

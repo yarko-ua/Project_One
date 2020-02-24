@@ -41,10 +41,3 @@ export default (state = initialState, action) => {
             return state;
     }
 }
-// export default FilterSize = (category) => {
-//     let filtered = category;
-//     if (this.state.size.length !== 0) {
-//         return filtered.filter(item => item.size.includes(this.state.size[0]));
-//     }
-//     return filtered;
-// }
