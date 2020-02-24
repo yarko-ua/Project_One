@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { AddToCart } from './../../../actions/actions'
 
 function ArrayOfProducts(props) {
     let imgBoard = 'https://content.backcountry.com/images/items/1200/NVS/NVS008E/ONECOL.jpg';
@@ -36,7 +38,9 @@ function ArrayOfProducts(props) {
                             <div className="product-sizes">
                                 {item.size.map(size => <span key={size} className="product-sizes__item">{size}</span>)}
                             </div>
-                            <button className="product-add-to-cart">ADD</button>
+                            <button className="product-add-to-cart"
+                                onClick={() => props.AddToCart(item)}
+                            >ADD</button>
                         </div>
                     </div>
 
@@ -46,5 +50,8 @@ function ArrayOfProducts(props) {
     )
 }
 
-
-export default ArrayOfProducts
+const mapState = state => ({ ...state });
+const mapDispatchToProps = dispatch => ({
+    AddToCart: content => dispatch(AddToCart(content)),
+});
+export default connect(mapState, mapDispatchToProps)(ArrayOfProducts)
