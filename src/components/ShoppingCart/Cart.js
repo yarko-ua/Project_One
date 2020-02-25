@@ -40,8 +40,8 @@ class Cart extends Component {
                                     {item.sex}
                                 </td>
                                 <td className="cart-table__quantity">
-                                    <button onClick={() => this.props.Decrease(item.counter)}>-</button>
                                     <span>{item.counter}</span>
+                                    <button onClick={() => this.props.Decrease(item.counter)}>-</button>
                                     <button onClick={() => this.props.Increase(item.counter)}>+</button>
                                 </td>
                                 <td className="cart-table__price">
