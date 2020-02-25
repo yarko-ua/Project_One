@@ -36,8 +36,37 @@ header {
         height:50px; 
         border-radius: 50%; 
         margin-right: 10px;
+        animation: rotate 2.6s infinite linear;
     }
 
+    @keyframes rotate {
+        0% {transform: rotateZ(0deg);}
+        4% {transform: rotateZ(14deg);}    
+        8% {transform: rotateZ(27deg);}
+        12% {transform: rotateZ(40deg);}
+        16% {transform: rotateZ(54deg);}
+        20% {transform: rotateZ(69deg);}
+        24% {transform: rotateZ(84deg);}
+        28% {transform: rotateZ(96deg);}
+        32% {transform: rotateZ(112deg);}
+        36% {transform: rotateZ(126deg);}
+        40% {transform: rotateZ(140deg);}
+        44% {transform: rotateZ(153deg);}
+        48% {transform: rotateZ(166deg);}
+        52% {transform: rotateZ(180deg);}
+        56% {transform: rotateZ(194deg);}
+        60% {transform: rotateZ(206deg);}
+        64% {transform: rotateZ(222deg);}
+        68% {transform: rotateZ(238deg);}
+        72% {transform: rotateZ(251deg);}
+        76% {transform: rotateZ(265deg);}
+        80% {transform: rotateZ(279deg);}
+        84% {transform: rotateZ(292deg);}
+        88% {transform: rotateZ(308deg);}
+        92% {transform: rotateZ(322deg);}
+        96% {transform: rotateZ(346deg);}
+        100% {transform: rotateZ(360deg);}
+    }
 
     .search-bar {
         position: relative;
@@ -120,19 +149,32 @@ header {
         li {
             display: inline-block;
             a {
+                position: relative;
                 text-decoration: none;
                 display: block;
                 text-transform: uppercase;
                 color: #fff;
-                padding: 10px 20px;
+                padding: 0 5px ;
+                margin: 10px 15px;
                 font-family: 'Sriracha', cursive;
-                &:hover {
-                    background-color: #ddd8c5;
-                    color: #000;
+                &::after{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 3px;
+                    transition: all .5s linear;
                 }
-                &.active {
-                    background-color: #fff;
-                    color: #000;
+                &:hover::after{
+                    width: 100%;
+                    background-color: yellow;
+                }
+                &.active::after{
+                    width: 100%;
+                    top: 0;
+                    background-color: green;
                 }
             }
         }
