@@ -23,3 +23,16 @@ export const RemoveFromCart = content => ({
     type: 'Remove_From_Cart',
     payload: content
 })
+export const ResetFilter = () => ({
+    type: 'Reset_Filter',
+})
+
+export const Increase = content => ({
+    type: 'Increase_Counter',
+    payload: (content + 1),
+})
+export const Decrease = content => ({
+    type: 'Decrease_Counter',
+    payload: (content - 1),
+
+})

@@ -37,6 +37,14 @@ export default (state = initialState, action) => {
                 ]// ???
             }
         }
+        case 'Reset_Filter': {
+            return {
+                price: '',
+                gender: '',
+                brand: [],
+                size: [],
+            };
+        }
         default:
             return state;
     }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { connect } from 'react-redux';
+import { ResetFilter } from './../../../actions/actions'
 function Navbar(props) {
 
     return (
@@ -8,9 +9,10 @@ function Navbar(props) {
             <ul>
                 {props.links.map(item => (
                     <li key={item} className="navbar-item">
-                        <NavLink to={
-                            item === 'home' ? `/` : `/${item}`
-                        }>
+                        <NavLink
+                            onClick={() => props.ResetFilter()}
+                            to={item === 'home' ? `/` : `/${item}`}
+                        >
                             {item}
                         </NavLink>
                     </li>
@@ -22,4 +24,9 @@ function Navbar(props) {
 
 }
 
-export default Navbar
+const mapState = state => ({ ...state });
+const mapDispatchToProps = dispatch => ({
+    ResetFilter: () => dispatch(ResetFilter()),
+
+});
+export default connect(mapState, mapDispatchToProps)(Navbar)
