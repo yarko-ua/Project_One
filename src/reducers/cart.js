@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
                 ...state,
                 shoppingCart: [
                     ...state.shoppingCart,
-                    action.payload
+                    action.payload,
                 ]
             }
         }
@@ -18,6 +18,24 @@ export default (state = initialState, action) => {
                 ...state,
                 shoppingCart: [
                     state.shoppingCart.filter(item => item !== action.payload)
+                ]
+            }
+        }
+        case 'Increase_Counter': {
+            return {
+                ...state,
+                shoppingCart: [
+                    ...state.shoppingCart,
+                    action.payload,
+                ]
+            }
+        }
+        case 'Decrease_Counter': {
+            return {
+                ...state,
+                shoppingCart: [
+                    ...state.shoppingCart,
+                    action.payload,
                 ]
             }
         }

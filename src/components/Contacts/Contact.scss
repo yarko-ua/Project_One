@@ -1,0 +1,183 @@
+section.contact {
+    // background: url(./../../backgr1.jpg) no-repeat center;
+    // background-size: cover;
+    // background-attachment: fixed;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    min-height: 100vh;
+
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    i {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+}
+
+.contactsTitle {
+    padding-top: 50px;
+    margin-bottom: 50px;
+    color: #fff;
+    opacity: 0.9;
+    font-size: 45px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contacts-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 50px;
+    opacity: 0.9;
+    .contacts {
+        width: 40%;
+        min-height: 650px;
+    }
+    #map{
+        width: 60%;
+        background-color: gray;
+        min-height: 650px;
+        border-radius: 5px;
+    }
+}
+
+.contacts {
+    padding-top: 10px;
+    &__contacts{
+        color: #fff;
+        p{
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            i{
+                color: seagreen;
+                background-color: #fff;
+                padding: 7px 10px;
+                border-radius: 50%;
+            } 
+        }
+        a{
+            width: max-content;
+            padding-left: 1px;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: #fff;
+            i{
+                color: seagreen;
+                background-color: #fff;
+                padding: 7px;
+                border-radius: 50%;
+                transition: all .8s ease-in-out;
+                &.fa-mobile-alt{
+                    padding: 7px 12px;
+                }
+            }
+            &::after{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: block;
+                content: '';
+                width: 0px;
+                height: 3px;
+                transition: all .7s ease-in-out;
+                background-color: palegreen;
+            }
+            &:hover i{
+                background-color: #000;
+                color:#fff;
+            }
+            &:hover::after{
+                width: 100%; 
+            }
+        }
+    }
+    
+    &__socials {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        a{
+            i{
+                color: seagreen;
+                transition: all .5s ease-in-out;
+                margin: 0 15px 0;
+                padding: 0;
+                font-size: 40px;
+            }
+            &:hover i{
+                // background-color: #000;
+                color:#fff;
+            }    
+        }
+    }
+     
+}
+
+.touch-with-us{
+    width: 100%;
+    padding-right: 10px;
+    margin-bottom: 50px;
+    h3{
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+    }
+    textarea{
+        display: block;
+        width: 100%;
+        margin: 15px auto 5px;
+        min-height: 300px;
+        padding-left: 10px;
+        padding-top: 10px;
+        border: transparent;
+        border-radius: 7px;
+    }
+    button {
+        display: inline-block;
+        width: 150px;
+        height: 50px;
+        text-transform: uppercase;
+        font-size: 18px;
+        // border: 1px solid transparent;
+        border-radius: 7px;
+        background-color: palegreen;
+        color: #000;
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (max-width:1199px){
+    .contacts-container{
+        .contacts {
+            width: 100%;
+            min-height: 500px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #map{
+            width: 100%;
+            background-color: gray;
+            min-height: 500px;
+        }
+    }
+    .touch-with-us{
+        text-align: center;
+    }
+    
+}
