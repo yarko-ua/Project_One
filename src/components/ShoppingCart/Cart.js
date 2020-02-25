@@ -60,15 +60,13 @@ class Cart extends Component {
                 </table>
                 <h2>Total: {
                     // (function () {
-                    //     let sum = 0
-                    //     this.props.cart.shoppingCart.forEach(element => {
-                    //         sum += +element.price;
-                    //         console.log(sum);
-                    //     })
-                    //     console.log(sum);
-                    //     return sum;
+                    //     this.props.cart.shoppingCart.reduce((total, item) => {
+                    //         console.log(total)
+                    //         return total + item.price
+                    //     }, 0)
                     // })()
-                }</h2>
+                }
+                </h2>
                 <div className="proceed">
                     <NavLink to="cart/order">
                         <button >Proceed with order</button>

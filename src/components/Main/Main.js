@@ -54,6 +54,18 @@ class Main extends Component {
         }
         return filtered;
     }
+    FilterBySearch = category => {
+        let filtered = category;
+
+        if (this.props.filter.search !== '') {
+            return filtered.filter(
+                item => item.name.toLowerCase().indexOf(this.props.filter.search.toLowerCase()) > -1 ||
+                    item.model.toLowerCase().indexOf(this.props.filter.search.toLowerCase()) > -1
+            )
+        }
+
+        return filtered;
+    }
 
 
     filter = (category) => {
@@ -65,6 +77,7 @@ class Main extends Component {
         // console.log(a);
         a = this.FilterGender(a);
         // console.log(a);
+        a = this.FilterBySearch(a);
         return a;
     }
 

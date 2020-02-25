@@ -36,3 +36,7 @@ export const Decrease = content => ({
     payload: (content - 1),
 
 })
+export const Search = content => ({
+    type: 'Search',
+    payload: content
+})
