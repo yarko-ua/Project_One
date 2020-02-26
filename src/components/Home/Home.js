@@ -6,7 +6,7 @@ export default function Home(props) {
 
     return (
         <section className="home">
-            <Carousel>
+            <Carousel interval={3000} pauseOnHover={false}>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
@@ -26,7 +26,7 @@ export default function Home(props) {
                     />
 
                     <Carousel.Caption>
-                        <h3>Carpathian's at night</h3>
+                        <h3>Carpathian at night</h3>
                         <p>Photograph: Michail Bundash</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -50,8 +50,20 @@ export default function Home(props) {
                     />
 
                     <Carousel.Caption>
-                        <h3>Mt. Bandlash</h3>
+                        <h3>Alberta, Canada</h3>
                         <p>Photograph: Julia Erbono</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src="https://www.xtrafondos.com/en/descargar.php?id=3037&resolucion=3840x2160"
+                        alt="Fifth slide"
+                    />
+
+                    <Carousel.Caption>
+                        <h3>Mt. Rain</h3>
+                        <p>Photograph: Kodjima Genius</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
