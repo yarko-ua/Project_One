@@ -37,7 +37,7 @@ class Header extends React.Component {
                     <div className="header-bottom">
                         <Navbar links={this.props.categories} />
                         <span className="currency">
-                            <i className="fas fa-hryvnia"></i>
+                            {/* <i className="fas fa-hryvnia"></i> */}
                             {/* <i className="fas fa-dollar-sign"></i> */}
                         </span>
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contact.scss';
-
+// import { MapContainer } from '../Map';
 
 export default function Contacts() {
   return (
@@ -40,7 +40,9 @@ export default function Contacts() {
               <button type="submit">Send</button>
             </div>
           </div>
-          <div className="map" id="map">Here is Map</div>
+          <div id="map">
+            {/* <MapContainer /> */}
+          </div>
         </div>
 
       </div>

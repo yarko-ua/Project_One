@@ -3,7 +3,6 @@
 function initMap() {
 
     let city = { lat: 45.52170255, lng: 32.69469291 };
-    let text = "Snowy Store \n We love our customers \n 24/7";
 
     // The map, centered at Uluru
     var myMap = new google.maps.Map(
@@ -187,7 +186,7 @@ function initMap() {
     });
     //infoWindow
     let infowindow = new google.maps.InfoWindow({
-        content: text
+        content: 'Snowy Store.\n We love our customers\n 24/7'
     });
 
 }
