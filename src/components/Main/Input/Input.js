@@ -9,7 +9,7 @@ function Input(props) {
         <>
             <div className="filters">
                 <form>
-                    <fieldset>
+                    <fieldset className="active">
                         <legend onClick={props.toggle}>{props.title}</legend>
                         {props.options.map((option, index) => (
                             <>

@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { RemoveFromCart, Increase, Decrease } from './../../actions/actions'
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+import { Modal, Button } from 'react-bootstrap';
+import Form from './../Form/Form';
 
 class Cart extends Component {
-    // componentDidMount(){
-    //     () => console.log('mount-' + this.props.cart.shoppingCart)
-    // };
+    constructor(props) {
+        super(props);
+        this.state = {
+            showModal: false
+        }
+    }
+
+    show = () => {
+        this.setState({ showModal: true })
+    }
+
+    hide = () => {
+        this.setState({ showModal: false })
+    }
 
     render() {
+        console.log(this.props);
         return (
             <div className="cart" >
                 <table className="cart-table">
@@ -52,7 +66,7 @@ class Cart extends Component {
 
                                 </td>
                                 <td className="cart-table__delete">
-                                    <button onClick={() => this.props.RemoveFromCart(item.model)}>X</button>
+                                    <Button delete onClick={() => this.props.RemoveFromCart(item)}>X</Button>
                                 </td>
                             </tr>
                         ))}
@@ -60,20 +74,35 @@ class Cart extends Component {
                 </table>
                 <h2>Total: {
                     // (function () {
-                    //     let sum = 0
-                    //     this.props.cart.shoppingCart.forEach(element => {
-                    //         sum += +element.price;
-                    //         console.log(sum);
-                    //     })
-                    //     console.log(sum);
-                    //     return sum;
+                    //     item.reduce((total, crnt) => {
+                    //         console.log(total)
+                    //         return total + crnt.price
+                    //     }, 0)
                     // })()
-                }</h2>
+                }
+                </h2>
                 <div className="proceed">
-                    <NavLink to="cart/order">
-                        <button >Proceed with order</button>
-                    </NavLink>
+                    {/* <NavLink to="cart/order"> */}
+                    <button onClick={this.show}>Proceed with order</button>
+                    {/* </NavLink> */}
                 </div>
+                <Modal show={this.state.showModal} backdrop="static"
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title>Fill the form</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Form />
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={this.hide}>
+                            Back
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             </div >
         )
     }

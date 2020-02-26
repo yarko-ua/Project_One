@@ -3,6 +3,7 @@ const initialState = {
     gender: '',
     brand: [],
     size: [],
+    search: ''
 };
 
 export default (state = initialState, action) => {
@@ -39,10 +40,17 @@ export default (state = initialState, action) => {
         }
         case 'Reset_Filter': {
             return {
+                ...state,
                 price: '',
                 gender: '',
                 brand: [],
                 size: [],
+            };
+        }
+        case 'Search': {
+            return {
+                ...state,
+                search: action.payload
             };
         }
         default:

@@ -11,7 +11,7 @@ function Navbar(props) {
                     <li key={item} className="navbar-item">
                         <NavLink
                             onClick={() => props.ResetFilter()}
-                            to={item === 'home' ? `/` : `/${item}`}
+                            to={item === 'home' ? `/home` : `/${item}`}
                         >
                             {item}
                         </NavLink>

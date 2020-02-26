@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar/Navbar';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { Search } from './../../actions/actions'
 class Header extends React.Component {
 
     render() {
@@ -15,7 +15,10 @@ class Header extends React.Component {
                             <h1>Snowy Store</h1>
                         </div>
                         <div className="search-bar">
-                            <input type="text" id="search" />
+                            <input type="text" id="search"
+                                value={this.props.filter.search}
+                                onChange={(e) => this.props.Search(e.target.value)}
+                            />
                             <i className="fas fa-search"></i>
                         </div>
                         <NavLink to="/cart">
@@ -34,7 +37,7 @@ class Header extends React.Component {
                     <div className="header-bottom">
                         <Navbar links={this.props.categories} />
                         <span className="currency">
-                            <i className="fas fa-hryvnia"></i>
+                            {/* <i className="fas fa-hryvnia"></i> */}
                             {/* <i className="fas fa-dollar-sign"></i> */}
                         </span>
                     </div>
@@ -48,4 +51,7 @@ class Header extends React.Component {
 
 
 const mapState = props => ({ ...props })
-export default connect(mapState)(Header);
+const mapDispatchToProps = dispatch => ({
+    Search: content => dispatch(Search(content)),
+});
+export default connect(mapState, mapDispatchToProps)(Header);
