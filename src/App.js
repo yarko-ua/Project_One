@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Home from './components/Home/Home'
 import Contacts from './components/Contacts/Contacts'
-import { BrowserRouter, Route, } from 'react-router-dom';
+import { Route, HashRouter, } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Cart from './components/ShoppingCart/Cart';
 
@@ -15,7 +15,7 @@ class App extends Component {
     // Вывод в консоль стора
     console.log(this.props);
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Header categories={['home', 'snowboards', 'bindings', 'boots', 'contacts']} />
         <Route exact path='/' component={Home} />
         <Route exact path='/snowboards'
@@ -42,7 +42,7 @@ class App extends Component {
         <Route exact path='/contacts' component={Contacts} />
         <Route exact path='/cart' component={Cart} />
         {/* <Route exact path='/cart/order' component={Order} /> */}
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 
