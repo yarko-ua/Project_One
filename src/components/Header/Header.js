@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar/Navbar';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Search } from './../../actions/actions'
+import { Search, Exchange } from './../../actions/actions'
 class Header extends React.Component {
 
     render() {
@@ -36,7 +36,7 @@ class Header extends React.Component {
                     <hr />
                     <div className="header-bottom">
                         <Navbar links={this.props.categories} />
-                        <span className="currency">
+                        <span className="currency" onClick={() => this.props.Exchange()}>
                             {/* <i className="fas fa-hryvnia"></i> */}
                             {/* <i className="fas fa-dollar-sign"></i> */}
                         </span>
@@ -53,5 +53,6 @@ class Header extends React.Component {
 const mapState = props => ({ ...props })
 const mapDispatchToProps = dispatch => ({
     Search: content => dispatch(Search(content)),
+    Exchange: () => dispatch(Exchange()),
 });
 export default connect(mapState, mapDispatchToProps)(Header);

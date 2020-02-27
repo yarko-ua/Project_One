@@ -46,3 +46,6 @@ export const ShowModal = () => ({
 export const HideModal = () => ({
     type: "Hide_Modal",
 })
+export const Exchange = () => ({
+    type: "Exchange",
+})

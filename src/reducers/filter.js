@@ -53,6 +53,12 @@ export default (state = initialState, action) => {
                 search: action.payload
             };
         }
+        case 'Exchange': {
+            return {
+                ...state,
+                search: action.payload
+            };
+        }
         default:
             return state;
     }
