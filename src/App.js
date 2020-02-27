@@ -21,7 +21,7 @@ class App extends Component {
         <Route exact path='/snowboards'
           component={(props) => (<Main
             snowboard={{}}
-            options={["145", "147", "149", "151", "152", "154", "155", "157", "160", "161"]}
+            options={["145cm", "147cm", "149cm", "151cm", "152cm", "154cm", "155cm", "157cm", "160cm", "161cm"]}
             brands={["Burton", "K2", "LibTech", "NeverSummer", "Rome"]}
             {...props}
           />)} />

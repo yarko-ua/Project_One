@@ -1,69 +1,37 @@
 import React, { Component } from 'react';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import GoogleMapReact from 'google-map-react';
 
-export class MapContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showingInfoWindow: false,
-            activeMarker: {},
-            selectedPlace: {},
-        };
-    }
+const AnyReactComponent = ({ text }) => <div className="marker">{text}</div>;
 
-
-    onMarkerClick = (props, marker, e) =>
-        this.setState({
-            selectedPlace: props,
-            activeMarker: marker,
-            showingInfoWindow: true
-        });
-
-    onMapClicked = (props) => {
-        if (this.state.showingInfoWindow) {
-            this.setState({
-                showingInfoWindow: false,
-                activeMarker: null
-            })
-        }
+class SimpleMap extends Component {
+    static defaultProps = {
+        center: {
+            lat: 45.52170255,
+            lng: 32.69469291
+        },
+        zoom: 14
     };
 
     render() {
-        // const mapStyles = {
-        //     width: '100%',
-        //     height: '100%',
-        // }
         return (
-            <Map google={this.props.google}
-                zoom={12}
-                style={{ width: '100%', height: '100%', position: 'relative' }}
-                className={'map'}
-                initialCenter={{ lat: 45.52170255, lng: 32.69469291 }}
-                onClick={this.onMapClicked}
-            >
-                <Marker onClick={this.onMarkerClick}
-                    title={'The marker`s title will appear as a tooltip.'}
-                    name={'SnowyStore'}
-                    position={{ lat: 45.52170255, lng: 32.69469291 }}
-                    icon={{
-                        url: "'https://cdn1.iconfinder.com/data/icons/vegetables-1-flat/33/beetrot-512.png",
-                        // anchor: new google.maps.Point(32, 32),
-                        // scaledSize: new google.maps.Size(64, 64)
-                    }}
-                />
-                <InfoWindow
-                    marker={this.state.activeMarker}
-                    visible={this.state.showingInfoWindow}>
-                    <div>
-                        <h1>{this.state.selectedPlace.name}</h1>
-                    </div>
-                </InfoWindow>
-            </Map>
+            // Important! Always set the container height explicitly
+            <div style={{ height: '650px', width: '100%', position: 'relative' }}>
+                <GoogleMapReact
+                    bootstrapURLKeys={{ key: 'AIzaSyBZSFNoes5FJvhoj0XQ_97-2oxvE7F3tfw' }}
+                    defaultCenter={this.props.center}
+                    defaultZoom={this.props.zoom}
+                >
+                    <AnyReactComponent
+                        lat={45.52170255}
+                        lng={32.69469291}
+                        text="Snowy Store"
+                    />
+                </GoogleMapReact>
+            </div>
         );
     }
 }
 
-export default GoogleApiWrapper({
-    apiKey: ('AIzaSyBZSFNoes5FJvhoj0XQ_97-2oxvE7F3tfw')
-})(MapContainer);
+export default SimpleMap;
+
 

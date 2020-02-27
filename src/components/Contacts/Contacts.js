@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contact.scss';
-// import { MapContainer } from '../Map';
+import SimpleMap from '../Map';
 
 export default function Contacts() {
   return (
@@ -11,27 +11,27 @@ export default function Contacts() {
           <div className="contacts">
             <div className="contacts__contacts">
               <p>
-                <i class="fas fa-map-marker-alt"></i>
+                <i className="fas fa-map-marker-alt"></i>
                 50 st.Ozerna, Chornomorske, Ukraine
             </p>
               <a href="tel:+380631600365">
-                <i class="fas fa-mobile-alt"></i>
+                <i className="fas fa-mobile-alt"></i>
                 +380631600365
               </a>
               <a href="mailto:ssilvias13@gmail.com">
-                <i class="fas fa-at"></i>
+                <i className="fas fa-at"></i>
                 ssilvias13@gmail.com
             </a>
             </div>
             <div className="contacts__socials">
-              <a href="https://www.instagram.com">
-                <i class="fas fa-camera-retro"></i>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <i className="fas fa-camera-retro"></i>
               </a>
-              <a href="https://www.facebook.com">
-                <i class="fab fa-facebook-square"></i>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-facebook-square"></i>
               </a>
-              <a href="https://www.twitter.com">
-                <i class="fab fa-twitter-square"></i>
+              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-twitter-square"></i>
               </a>
             </div>
             <div className="touch-with-us">
@@ -41,7 +41,7 @@ export default function Contacts() {
             </div>
           </div>
           <div id="map">
-            {/* <MapContainer /> */}
+            <SimpleMap />
           </div>
         </div>
 

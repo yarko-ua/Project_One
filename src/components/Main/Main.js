@@ -5,9 +5,6 @@ import Filter from './Filter/Filter.js';
 import { connect } from 'react-redux';
 
 class Main extends Component {
-    addToCart = () => {
-
-    }
 
     FilterSize = (category) => {
         let filtered = category;
@@ -46,8 +43,8 @@ class Main extends Component {
         let filtered = category;
         if (this.props.filter.brand.length !== 0) {
             return filtered.filter(item => {
-                console.log('brand-', item.name);
-                console.log(this.props.filter.brand.some(brand => item.name.indexOf(brand) > -1));
+                // console.log('brand-', item.name);
+                // console.log(this.props.filter.brand.some(brand => item.name.indexOf(brand) > -1));
                 return this.props.filter.brand.some(brand => item.name.indexOf(brand) > -1);
             }
             );
@@ -85,8 +82,7 @@ class Main extends Component {
         const snowboards = productsBase.goods.filter(item => item.category === "Snowboard");
         const bindings = productsBase.goods.filter(item => item.category === "Snowboard Binding");
         const boots = productsBase.goods.filter(item => item.category === "Snowboard Boot");
-
-        console.log(this.props);
+        // console.log(this.props);
 
         if (this.props.snowboard) {
             return (

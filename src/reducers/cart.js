@@ -1,5 +1,6 @@
 const initialState = {
     shoppingCart: [],
+    Modal: false,
 };
 
 export default (state = initialState, action) => {
@@ -35,6 +36,18 @@ export default (state = initialState, action) => {
                     ...state.shoppingCart,
                     action.payload,
                 ]
+            }
+        }
+        case 'Show_Modal': {
+            return {
+                ...state,
+                Modal: true
+            }
+        }
+        case 'Hide_Modal': {
+            return {
+                ...state,
+                Modal: false
             }
         }
         default:

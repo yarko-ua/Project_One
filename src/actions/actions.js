@@ -40,3 +40,9 @@ export const Search = content => ({
     type: 'Search',
     payload: content
 })
+export const ShowModal = () => ({
+    type: "Show_Modal",
+})
+export const HideModal = () => ({
+    type: "Hide_Modal",
+})
