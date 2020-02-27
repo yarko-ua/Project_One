@@ -36,8 +36,10 @@ export default function Contacts() {
             </div>
             <div className="touch-with-us">
               <h3>Live message for us</h3>
-              <textarea placeholder="Your message"></textarea>
-              <button type="submit">Send</button>
+              <form onSubmit={() => alert('Thank you for letter')}>
+                <textarea placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+              </form>
             </div>
           </div>
           <div id="map">

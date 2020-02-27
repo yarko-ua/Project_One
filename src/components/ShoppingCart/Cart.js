@@ -33,14 +33,14 @@ class Cart extends Component {
                                         {item.name + ' ' + item.model}
                                     </p>
                                     <p>
-                                        {item.size}
+                                        {item.size.join(' ')}
                                     </p>
                                 </td>
                                 <td className="cart-table__gender">
                                     {item.sex}
                                 </td>
                                 <td className="cart-table__quantity">
-                                    <span>{item.counter}</span>
+                                    <span key={item.model}>{item.counter}</span>
                                     <button onClick={() => this.props.Decrease(item.counter)}>-</button>
                                     <button onClick={() => this.props.Increase(item)}>+</button>
                                 </td>
