@@ -29,11 +29,11 @@ export const ResetFilter = () => ({
 
 export const Increase = content => ({
     type: 'Increase_Counter',
-    payload: (content + 1),
+    payload: content
 })
 export const Decrease = content => ({
     type: 'Decrease_Counter',
-    payload: (content - 1),
+    payload: content
 
 })
 export const Search = content => ({

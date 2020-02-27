@@ -42,7 +42,7 @@ class Cart extends Component {
                                 <td className="cart-table__quantity">
                                     <span>{item.counter}</span>
                                     <button onClick={() => this.props.Decrease(item.counter)}>-</button>
-                                    <button onClick={() => this.props.Increase(item.counter)}>+</button>
+                                    <button onClick={() => this.props.Increase(item)}>+</button>
                                 </td>
                                 <td className="cart-table__price">
                                     {item.price}
@@ -58,13 +58,14 @@ class Cart extends Component {
                         ))}
                     </tbody>
                 </table>
-                <h2>Total: {
-                    // (function () {
-                    //     item.reduce((total, crnt) => {
-                    //         console.log(total)
-                    //         return total + crnt.price
-                    //     }, 0)
-                    // })()
+                <h2>Total: ${
+                    (
+                        this.props.cart.shoppingCart.reduce((total, crnt) => {
+                            console.log(total);
+                            return total += (crnt.price * crnt.counter);
+                        }, 0)
+
+                    )
                 }
                 </h2>
                 <div className="proceed">

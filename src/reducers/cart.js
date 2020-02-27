@@ -23,10 +23,12 @@ export default (state = initialState, action) => {
         case 'Increase_Counter': {
             return {
                 ...state,
-                shoppingCart: [
-                    ...state.shoppingCart,
-                    action.payload,
-                ]
+                shoppingCart: state.shoppingCart.forEach(item => {
+                    if (item === action.payload) {
+                        item.counter = item.counter + 1
+                    }
+                })
+
             }
         }
         case 'Decrease_Counter': {
